@@ -1,7 +1,8 @@
 class mumble(
   $autostart          = true,  # Start server at boot
-  $snapshot           = false, # Use snapshot over release PPA
-  $server_password    = '',    # Supervisor account password
+  $ppa                = false,  # Use PPA
+  $snapshot           = false, # PPA only: use snapshot over release
+  $server_password    = undef,    # Supervisor account password
 
   # The following parameters affect mumble-server.ini through a template
   # For more info, see http://mumble.sourceforge.net/Murmur.ini
@@ -25,30 +26,36 @@ class mumble(
   $welcome_text       = '<br />Welcome to this server running <b>Murmur</b>.<br />Enjoy your stay!<br />',
   ) {
 
-  case $operatingsystem {
+  case $::operatingsystem {
     'Ubuntu': {
-      if $mumble::snapshot {
+      if $ppa {
         apt::ppa { 'ppa:mumble/snapshot':
+          # ensure => $snapshot ? { true => 'present', false => 'absent' },
+          before => Package['mumble-server'],
+        }
+        apt::ppa { 'ppa:mumble/release':
+          # ensure => $snapshot ? { false => 'present', true => 'absent' },
           before => Package['mumble-server']
         }
       }
       else {
-        apt::ppa { 'ppa:mumble/release':
-          before => Package['mumble-server']
-        }
-
-        package { 'libicu-dev':
-          ensure => present,
-        }
+        # apt::ppa { ['ppa:mumble/snapshot', 'ppa:mumble/release']:
+        #   ensure => 'absent'
+        # }
+      }
+      # Missing dependency for 12.04 and 14.04 even with PPA
+      package { 'libicu-dev':
+        ensure => present,
+        before => Package['mumble-server']
       }
     }
     default: {
-      fail("${operatingsystem} is not yet supported.")
+      fail("${::operatingsystem} is not yet supported.")
     }
   }
 
-  package { [ 'mumble-server' ]: 
-    ensure => latest,
+  package { 'mumble-server':
+    ensure => present
   }
 
   group { $mumble::group:
