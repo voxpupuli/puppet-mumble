@@ -30,7 +30,7 @@ the service.
 
 * Packages
     * `mumble-server`
-	* `libicu-dev` on Ubuntu 12.04 ([bugfix](https://bugs.launchpad.net/ubuntu/+source/qt4-x11/+bug/989915))
+	* `libicu-dev` if `$libicu_dev` ([bugfix](https://bugs.launchpad.net/ubuntu/+source/qt4-x11/+bug/989915))
 * PPAs
     * `ppa:mumble/release`
 	* `ppa:mumble/snapshot`

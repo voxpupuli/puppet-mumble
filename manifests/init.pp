@@ -1,8 +1,9 @@
 class mumble(
   $autostart          = true,  # Start server at boot
-  $ppa                = false,  # Use PPA
+  $ppa                = false, # Use PPA
   $snapshot           = false, # PPA only: use snapshot over release
-  $server_password    = undef,    # Supervisor account password
+  $libicu_fix         = false, # install libicu-dev to fix dependency
+  $server_password    = undef, # Supervisor account password
 
   # The following parameters affect mumble-server.ini through a template
   # For more info, see http://mumble.sourceforge.net/Murmur.ini
@@ -44,12 +45,9 @@ class mumble(
         # }
       }
       # Missing dependency for 12.04 with PPA
-      case $::operatingsystemrelease {
-        '12.04': {
-          package { 'libicu-dev':
-            ensure => present,
-            before => Package['mumble-server']
-          }
+      if $libicu_fix {
+        package { 'libicu-dev':
+          before => Package['mumble-server']
         }
       }
     }
