@@ -59,16 +59,13 @@ class mumble(
   }
 
   package { 'mumble-server':
-    ensure => present
   }
 
   group { $group:
-    ensure  => present,
     require => Package['mumble-server']
   }
 
   user { $user:
-    ensure  => present,
     gid     => $group,
     require => [Group[$group], Package['mumble-server']]
   }
@@ -82,7 +79,7 @@ class mumble(
   }
 
   service { 'mumble-server':
-    ensure    => 'running',
+    ensure    => running,
     enable    => $autostart,
     subscribe => File['/etc/mumble-server.ini']
   }
