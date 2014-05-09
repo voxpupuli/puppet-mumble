@@ -15,13 +15,14 @@
 
 This module installs the Mumble VoIP server, murmurd.
 
-It is in alpha development and tested on Ubuntu 12.04.
+It is in beta development and tested on Ubuntu 12.04 and 14.04.
 
 ## Module Description
 
-This module is intended for Ubuntu. It adds either the snapshot or
-release Mumble PPA, then installs mumble-server, configures it through
-a template, and starts the service.
+This module is intended for Ubuntu. If `$ppa` is true, it adds either
+the snapshot or release (depending on `$snapshot`) Mumble PPA, then
+installs mumble-server, configures it through a template, and starts
+the service.
 
 ## Setup
 
@@ -29,7 +30,7 @@ a template, and starts the service.
 
 * Packages
     * `mumble-server`
-	* `libicu-dev`
+	* `libicu-dev` on Ubuntu 12.04 ([bugfix](https://bugs.launchpad.net/ubuntu/+source/qt4-x11/+bug/989915))
 * PPAs
     * `ppa:mumble/release`
 	* `ppa:mumble/snapshot`
@@ -54,12 +55,13 @@ This module has one class, `mumble`, with the following
 parameters:
 
     $autostart          = true,  # Start server at boot
+    $ppa                = false, # Install the PPA
     $snapshot           = false, # Use snapshot over release PPA
     $server_password    = '',    # Supervisor account password
 
     # The following parameters affect mumble-server.ini through a template
     # For more info, see http://mumble.sourceforge.net/Murmur.ini
-    $password           = '',    # General entrance password
+    $password           = undef,    # General entrance password
     $port               = 64738,
     $host               = '',
     $user               = 'mumble-server',
