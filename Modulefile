@@ -1,5 +1,5 @@
 name    'andschwa-mumble'
-version '0.0.2'
+version '0.0.3'
 source 'git://github.com/andschwa/puppet-mumble.git'
 author 'Andrew Schwartzmeyer'
 license 'MIT License'
