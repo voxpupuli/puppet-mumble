@@ -43,10 +43,14 @@ class mumble(
         #   ensure => 'absent'
         # }
       }
-      # Missing dependency for 12.04 and 14.04 even with PPA
-      package { 'libicu-dev':
-        ensure => present,
-        before => Package['mumble-server']
+      # Missing dependency for 12.04 with PPA
+      case $::operatingsystemrelease {
+        '12.04': {
+          package { 'libicu-dev':
+            ensure => present,
+            before => Package['mumble-server']
+          }
+        }
       }
     }
     default: {
