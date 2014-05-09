@@ -79,13 +79,13 @@ class mumble(
 
   service { 'mumble-server':
     ensure    => 'running',
-    enable    => $mumble::autostart,
-    subscribe => File['/etc/mumble-server.ini'],
+    enable    => $autostart,
+    subscribe => File['/etc/mumble-server.ini']
   }
 
-  if $password != '' {
+  if $server_password != undef {
     exec { 'mumble_set_password':
-      command => '/usr/sbin/murmurd -supw ${password}',
+      command => "/usr/sbin/murmurd -supw ${server_password}",
       require => Service['mumble-server']
     }
   }
