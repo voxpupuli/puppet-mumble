@@ -58,19 +58,20 @@ class mumble(
     ensure => present
   }
 
-  group { $mumble::group:
-    ensure => present,
+  group { $group:
+    ensure  => present,
+    require => Package['mumble-server']
   }
 
-  user { $mumble::user:
+  user { $user:
     ensure  => present,
-    gid     => $mumble::group,
-    require => Group[$mumble::group],
+    gid     => $group,
+    require => [Group[$group], Package['mumble-server']]
   }
 
   file { '/etc/mumble-server.ini' :
-    owner   => $mumble::user,
-    group   => $mumble::group,
+    owner   => $user,
+    group   => $group,
     replace => true,
     content => template('mumble/mumble-server.erb'),
     require => Package['mumble-server']
