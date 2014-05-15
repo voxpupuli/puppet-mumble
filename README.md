@@ -105,8 +105,7 @@ If Mumble ever runs without being given an SSL certificate and key,
 then it will auto-generate its own. If later given a custom
 certificate and key, the Mumble service must be stopped, and then
 manually run with the option to wipe the keys from its internal
-configuration database. Please note that the keys must also be
-readable by the Mumble user.
+configuration database.
 
 ```sh
 service mumble-server stop
@@ -114,6 +113,12 @@ murmurd -wipessl
 pkill murmurd
 service mumble-server start
 ```
+
+Please note that on Debian / Ubuntu, you may want to change
+`USER=mumble-server` to `USER=root` in `/etc/init.d/mumber-server` so
+that root owned keys can be read by Mumble on startup, as per this
+[bug](https://bugs.launchpad.net/ubuntu/+source/mumble/+bug/1017301). The
+Mumble daemon automatically drops privileges itself.
 
 ## Development
 
