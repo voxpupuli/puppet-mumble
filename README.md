@@ -101,6 +101,20 @@ This module currently only supports Ubuntu. It is working on my
 Vagrant box, Ubuntu 12.04.4 LTS with Puppet 3.4.1, and as such it's
 development is on hold.
 
+If Mumble ever runs without being given an SSL certificate and key,
+then it will auto-generate its own. If later given a custom
+certificate and key, the Mumble service must be stopped, and then
+manually run with the option to wipe the keys from its internal
+configuration database. Please note that the keys must also be
+readable by the Mumble user.
+
+```sh
+service mumble-server stop
+murmurd -wipessl
+pkill murmurd
+service mumble-server start
+```
+
 ## Development
 
 Fork on
