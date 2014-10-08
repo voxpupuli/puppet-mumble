@@ -7,6 +7,7 @@ class mumble(
 
   # The following parameters affect mumble-server.ini through a template
   # For more info, see http://mumble.sourceforge.net/Murmur.ini
+  $register_name      = 'Mumble Server',
   $password           = '',    # General entrance password
   $port               = 64738,
   $host               = '',

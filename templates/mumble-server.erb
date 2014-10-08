@@ -143,7 +143,7 @@ logdays=<%= scope['mumble::log_days'] %>
 # addresses.
 # Only uncomment the 'registerName' parameter if you wish to give your "Root" channel a custom name.
 #
-#registerName=Mumble Server
+registerName="<%= scope['mumble::register_name'] %>"
 #registerPassword=secret
 #registerUrl=http://mumble.sourceforge.net/
 #registerHostname=
