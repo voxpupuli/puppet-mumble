@@ -1,9 +1,10 @@
 class mumble(
-  $autostart          = true,  # Start server at boot
-  $ppa                = false, # Use PPA
-  $snapshot           = false, # PPA only: use snapshot over release
-  $libicu_fix         = false, # install libicu-dev to fix dependency
-  $server_password    = undef, # Supervisor account password
+  $autostart          = true,      # Start server at boot
+  $ppa                = false,     # Use PPA
+  $snapshot           = false,     # PPA only: use snapshot over release
+  $libicu_fix         = false,     # install libicu-dev to fix dependency
+  $server_password    = undef,     # Supervisor account password
+  $version            = installed, # Version of mumble to install
 
   # The following parameters affect mumble-server.ini through a template
   # For more info, see http://mumble.sourceforge.net/Murmur.ini
@@ -57,6 +58,7 @@ class mumble(
   }
 
   package { 'mumble-server':
+    ensure => $version
   }
 
   group { $group:
