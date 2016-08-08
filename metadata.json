@@ -1,0 +1,21 @@
+{
+  "name": "puppet-mumble",
+  "version": "0.0.4",
+  "summary": "Install and Manage a Mumble Server",
+  "author": "Voxpupuli",
+  "source": "https://github.com/voxpupuli/puppet-mumble.git",
+  "project_page": "https://github.com/voxpupuli/puppet-mumble",
+  "issues_url": "https://github.com/voxpupuli/puppet-mumble/issues",
+  "license": "Apache-2.0",
+  "tags": [
+    "murmurd",
+    "mumble",
+    "voice"
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": ">= 1.4.0"
+    }
+  ]
+}

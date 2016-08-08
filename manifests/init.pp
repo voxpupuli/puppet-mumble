@@ -38,7 +38,7 @@ class mumble(
         }
         apt::ppa { 'ppa:mumble/release':
           # ensure => $snapshot ? { false => 'present', true => 'absent' },
-          before => Package['mumble-server']
+          before => Package['mumble-server'],
         }
       }
       else {
@@ -49,7 +49,7 @@ class mumble(
       # Missing dependency for 12.04 with PPA
       if $libicu_fix {
         package { 'libicu-dev':
-          before => Package['mumble-server']
+          before => Package['mumble-server'],
         }
       }
     }
@@ -59,16 +59,16 @@ class mumble(
   }
 
   package { 'mumble-server':
-    ensure => $version
+    ensure => $version,
   }
 
   group { $group:
-    require => Package['mumble-server']
+    require => Package['mumble-server'],
   }
 
   user { $user:
     gid     => $group,
-    require => [Group[$group], Package['mumble-server']]
+    require => [Group[$group], Package['mumble-server']],
   }
 
   file { '/etc/mumble-server.ini' :
@@ -76,19 +76,19 @@ class mumble(
     group   => $group,
     replace => true,
     content => template('mumble/mumble-server.erb'),
-    require => Package['mumble-server']
+    require => Package['mumble-server'],
   }
 
   service { 'mumble-server':
     ensure    => running,
     enable    => $autostart,
-    subscribe => File['/etc/mumble-server.ini']
+    subscribe => File['/etc/mumble-server.ini'],
   }
 
   if $server_password != undef {
     exec { 'mumble_set_password':
       command => "/usr/sbin/murmurd -supw ${server_password}",
-      require => Service['mumble-server']
+      require => Service['mumble-server'],
     }
   }
 }
