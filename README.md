@@ -1,4 +1,4 @@
-# andschwa-mumble
+# Mumble module for Puppet
 
 #### Table of Contents
 
@@ -30,10 +30,10 @@ the service.
 
 * Packages
     * `mumble-server`
-	* `libicu-dev` if `$libicu_dev` ([bugfix](https://bugs.launchpad.net/ubuntu/+source/qt4-x11/+bug/989915))
+    * `libicu-dev` if `$libicu_dev` ([bugfix](https://bugs.launchpad.net/ubuntu/+source/qt4-x11/+bug/989915))
 * PPAs
     * `ppa:mumble/release`
-	* `ppa:mumble/snapshot`
+    * `ppa:mumble/snapshot`
 * Services
     * `mumble-server`
 * Files
