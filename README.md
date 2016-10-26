@@ -1,5 +1,12 @@
 # Mumble module for Puppet
 
+[![Build Status](https://travis-ci.org/voxpupuli/puppet-mumble.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-mumble)
+[![Code Coverage](https://coveralls.io/repos/github/voxpupuli/puppet-mumble/badge.svg?branch=master)](https://coveralls.io/github/voxpupuli/puppet-mumble)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/puppet/mumble.svg)](https://forge.puppetlabs.com/puppet/mumble)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/puppet/mumble.svg)](https://forge.puppetlabs.com/puppet/mumble)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/puppet/mumble.svg)](https://forge.puppetlabs.com/puppet/mumble)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/puppet/mumble.svg)](https://forge.puppetlabs.com/puppet/mumble)
+
 #### Table of Contents
 
 1. [Overview](#overview)
