@@ -8,13 +8,13 @@ describe 'mumble', type: 'class' do
       end
 
       context 'with all defaults' do
-        it { should compile.with_all_deps }
-        it { should contain_class('mumble') }
-        it { should contain_file('/etc/mumble-server.ini') }
-        it { should contain_group('mumble-server') }
-        it { should contain_package('mumble-server') }
-        it { should contain_service('mumble-server') }
-        it { should contain_user('mumble-server') }
+        it { is_expected.to compile.with_all_deps }
+        it { is_expected.to contain_class('mumble') }
+        it { is_expected.to contain_file('/etc/mumble-server.ini') }
+        it { is_expected.to contain_group('mumble-server') }
+        it { is_expected.to contain_package('mumble-server') }
+        it { is_expected.to contain_service('mumble-server') }
+        it { is_expected.to contain_user('mumble-server') }
       end
     end
   end
