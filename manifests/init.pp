@@ -1,3 +1,65 @@
+# Class: mumble
+#
+# This class manages mumble on Debian based systems.
+#
+# @example Install mumble and configure an entrance password
+#   class { 'mumble':
+#     password => 'Fo0b@rr',
+#   }
+#
+# @param autostart start server at boot.
+#   Default value: true
+# @param ppa use Ubuntu PPA instead default APT repos.
+#   Default value: false
+# @param snapshot (PPA only) use snapshot over release.
+#   Default value: false
+# @param libicu_fix install libicu-dev to fix dependency.
+#   Default value: false
+# @param server_password supervisor account password (mumble admin).
+#   Default value: undef
+# @param version configure the version of mumble to install.
+#   Default value: installed
+# @param register_name muble server name. (This parameter affect mumble-server.ini through a template. For more info, see http://mumble.sourceforge.net/Murmur.ini)
+#   Default value: 'Mumble Server'
+# @param password general entrance password.
+#   Default value: ''
+# @param port port to bind TCP and UDP sockets to.
+#   Default value: '64738'
+# @param host IP or hostname to bind to. (If this is left blank (default), Murmur will bind to all available addresses).
+#   Default value: ''
+# @param user username used to start mumble.
+#   Default value: 'mumble-server'
+# @param group mumble server group
+#   Default value: 'mumble-server'
+# @param bandwidth maximum bandwidth (in bits per second) clients are allowed).
+#   Default value: '72000'
+# @param users maximum number of concurrent clients allowed.
+#   Default value: '100'
+# @param text_length_limit maximum length of text messages in characters. 0 for no limit.
+#   Default value: '5000'
+# @param autoban_attempts how many login attempts do we tolerate from one IP? (0 to disable).
+#   Default value: '10'
+# @param autoban_time_frame time interval (0 to disable).
+#   Default value: '120'
+# @param autoban_time bantime duration in seconds (0 to disable).
+#   Default value: '300'
+# @param database_path path to database.
+#   Default value: '/var/lib/mumble-server/mumble-server.sqlite'
+#   Allowed values: absolute path
+# @param log_path path to logfile
+#   Default value: '/var/log/mumble-server/mumble-server.log',
+#   Allowed values: absolute path
+# @param allow_html allow clients to use HTML in messages, user comments and channel descriptions?
+#   Default value: 'true'
+# @param log_days log entries in an internal database (set to 0 to keep forever, or -1 to disable logging to the DB).
+#   Default value: '31'
+# @param ssl_cert ssl certificate.
+#   Default value: ''
+# @param ssl_key key file.
+#   Default value: ''
+# @param welcome_text a welcome formated text.
+#   Default value: '<br />Welcome to this server running <b>Murmur</b>.<br />Enjoy your stay!<br />'
+#
 class mumble(
   $autostart          = true,      # Start server at boot
   $ppa                = false,     # Use PPA
