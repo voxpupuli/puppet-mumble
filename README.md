@@ -65,6 +65,11 @@ The simplest use of this module is:
 
 ### Usage
 
+Generated puppet strings documentation with examples is available from
+https://voxpupuli.org/puppet-mumble/
+
+It's also included in the docs/ folder as simple html pages.
+
 This module has one class, `mumble`, with the following
 parameters:
 
