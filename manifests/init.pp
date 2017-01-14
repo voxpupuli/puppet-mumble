@@ -92,7 +92,7 @@ class mumble(
   ) {
 
   case $::operatingsystem {
-    'Ubuntu': {
+    'Debian','Ubuntu': {
       if $ppa {
         apt::ppa { 'ppa:mumble/snapshot':
           # ensure => $snapshot ? { true => 'present', false => 'absent' },
