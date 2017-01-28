@@ -11,9 +11,9 @@
 
 1. [Overview](#overview)
 2. [Module Description](#module-description)
-3. [Setup - The basics of getting started with andschwa-mumble](#setup)
-    * [What andschwa-mumble affects](#what-andschwa-mumble-affects)
-    * [Beginning with andschwa-mumble](#beginning-with-andschwa-mumble)
+3. [Setup - The basics of getting started with puppet-mumble](#setup)
+    * [What puppet-mumble affects](#what-puppet-mumble-affects)
+    * [Beginning with puppet-mumble](#beginning-with-puppet-mumble)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
@@ -31,9 +31,16 @@ the snapshot or release (depending on `$snapshot`) Mumble PPA, then
 installs mumble-server, configures it through a template, and starts
 the service.
 
+## Get in touch
+
+* IRC: [#voxpupuli on irc.freenode.net](irc://irc.freenode.net/voxpupuli)
+  ([Freenode WebChat](http://webchat.freenode.net/?channels=%23voxpupuli))
+* Mailinglist: <voxpupuli@groups.io>
+  ([groups.io Webinterface](https://groups.io/g/voxpupuli/topics))
+
 ## Setup
 
-### What andschwa-mumble affects
+### What puppet-mumble affects
 
 * Packages
     * `mumble-server`
@@ -50,13 +57,18 @@ the service.
 * Group
     * `mumble-server`
 
-### Beginning with andschwa-mumble
+### Beginning with puppet-mumble
 
 The simplest use of this module is:
 
     include mumble
 
 ### Usage
+
+Generated puppet strings documentation with examples is available from
+https://voxpupuli.org/puppet-mumble/
+
+It's also included in the docs/ folder as simple html pages.
 
 This module has one class, `mumble`, with the following
 parameters:
@@ -130,6 +142,4 @@ Mumble daemon automatically drops privileges itself.
 
 ## Development
 
-Fork on
-[GitHub](https://github.com/andschwa/puppet-mumble), make
-a Pull Request.
+Fork on [GitHub](https://github.com/voxpupuli/puppet-mumble), make a Pull Request.
