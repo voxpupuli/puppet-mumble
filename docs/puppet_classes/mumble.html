@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Puppet Class: mumble
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "puppet_classes::mumble";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../puppet_class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (m)</a> &raquo;
+    <span class='title'><span class='object_link'>Puppet Classes</span></span>
+     &raquo; 
+    <span class="title">mumble</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="puppet_class_list_link"
+        href="../puppet_class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Puppet Class: mumble</h1>
+<div class="box_info">
+  
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>
+      manifests/init.pp
+    </dd>
+  </dl>
+</div>
+<h2>Overview</h2>
+<div class="docstring">
+  <div class="discussion">
+    <p>Class: mumble</p>
+
+<p>This class manages mumble on Debian based systems.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'><p>Install mumble and configure an entrance password</p>
+</div></p>
+      
+      <pre class="example code"><code>class { &#39;mumble&#39;:
+  password =&gt; &#39;Fo0b@rr&#39;,
+}</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>autostart</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>start server at boot.
+Default value: true</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ppa</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>use Ubuntu PPA instead default APT repos.
+Default value: false</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>snapshot</span>
+      
+      
+        <span class='type'>(<tt>PPA only</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>use snapshot over release.
+Default value: false</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>libicu_fix</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>install libicu-dev to fix dependency.
+Default value: false</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>server_password</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>supervisor account password (mumble admin).
+Default value: undef</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>version</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>installed</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>configure the version of mumble to install.
+Default value: installed</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>register_name</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;Mumble Server&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>muble server name. (This parameter affect mumble-server.ini through a template. For more info, see <a href="http://mumble.sourceforge.net/Murmur.ini">http://mumble.sourceforge.net/Murmur.ini</a>)
+Default value: &#39;Mumble Server&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>password</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>general entrance password.
+Default value: &#39;&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>port</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>64738</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>port to bind TCP and UDP sockets to.
+Default value: &#39;64738&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>host</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>IP or hostname to bind to. (If this is left blank (default), Murmur will bind to all available addresses).
+Default value: &#39;&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>user</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;mumble-server&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>username used to start mumble.
+Default value: &#39;mumble-server&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>group</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;mumble-server&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>mumble server group
+Default value: &#39;mumble-server&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>bandwidth</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>72000</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>maximum bandwidth (in bits per second) clients are allowed).
+Default value: &#39;72000&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>users</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>100</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>maximum number of concurrent clients allowed.
+Default value: &#39;100&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>text_length_limit</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>5000</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>maximum length of text messages in characters. 0 for no limit.
+Default value: &#39;5000&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>autoban_attempts</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>10</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>how many login attempts do we tolerate from one IP? (0 to disable).
+Default value: &#39;10&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>autoban_time_frame</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>120</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>time interval (0 to disable).
+Default value: &#39;120&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>autoban_time</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>300</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>bantime duration in seconds (0 to disable).
+Default value: &#39;300&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>database_path</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;/var/lib/mumble-server/mumble-server.sqlite&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>path to database.
+Default value: &#39;/var/lib/mumble-server/mumble-server.sqlite&#39;
+Allowed values: absolute path</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>log_path</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;/var/log/mumble-server/mumble-server.log&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>path to logfile
+Default value: &#39;/var/log/mumble-server/mumble-server.log&#39;,
+Allowed values: absolute path</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>allow_html</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>allow clients to use HTML in messages, user comments and channel descriptions?
+Default value: &#39;true&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>log_days</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>31</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>log entries in an internal database (set to 0 to keep forever, or -1 to disable logging to the DB).
+Default value: &#39;31&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ssl_cert</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>ssl certificate.
+Default value: &#39;&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ssl_key</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>key file.
+Default value: &#39;&#39;</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>welcome_text</span>
+      
+      
+        <span class='type'>(<tt>Any</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&lt;br /&gt;Welcome to this server running &lt;b&gt;Murmur&lt;/b&gt;.&lt;br /&gt;Enjoy your stay!&lt;br /&gt;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>a welcome formated text.
+Default value: &#39;<br />Welcome to this server running <b>Murmur</b>.<br />Enjoy your stay!<br />&#39;</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><div class="method_details_list">
+  <table class="source_code">
+    <tr>
+      <td>
+        <pre class="lines">
+
+
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156</pre>
+      </td>
+      <td>
+        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 63</span>
+
+class mumble(
+  $autostart          = true,      # Start server at boot
+  $ppa                = false,     # Use PPA
+  $snapshot           = false,     # PPA only: use snapshot over release
+  $libicu_fix         = false,     # install libicu-dev to fix dependency
+  $server_password    = undef,     # Supervisor account password
+  $version            = installed, # Version of mumble to install
+
+  # The following parameters affect mumble-server.ini through a template
+  # For more info, see http://mumble.sourceforge.net/Murmur.ini
+  $register_name      = &#39;Mumble Server&#39;,
+  $password           = &#39;&#39;,    # General entrance password
+  $port               = 64738,
+  $host               = &#39;&#39;,
+  $user               = &#39;mumble-server&#39;,
+  $group              = &#39;mumble-server&#39;,
+  $bandwidth          = 72000,
+  $users              = 100,
+  $text_length_limit  = 5000,
+  $autoban_attempts   = 10,
+  $autoban_time_frame = 120,
+  $autoban_time       = 300,
+  $database_path      = &#39;/var/lib/mumble-server/mumble-server.sqlite&#39;,
+  $log_path           = &#39;/var/log/mumble-server/mumble-server.log&#39;,
+  $allow_html         = true,
+  $log_days           = 31,
+  $ssl_cert           = &#39;&#39;,
+  $ssl_key            = &#39;&#39;,
+  $welcome_text       = &#39;&lt;br /&gt;Welcome to this server running &lt;b&gt;Murmur&lt;/b&gt;.&lt;br /&gt;Enjoy your stay!&lt;br /&gt;&#39;,
+  ) {
+
+  case $::operatingsystem {
+    &#39;Debian&#39;,&#39;Ubuntu&#39;: {
+      if $ppa {
+        apt::ppa { &#39;ppa:mumble/snapshot&#39;:
+          # ensure =&gt; $snapshot ? { true =&gt; &#39;present&#39;, false =&gt; &#39;absent&#39; },
+          before =&gt; Package[&#39;mumble-server&#39;],
+        }
+        apt::ppa { &#39;ppa:mumble/release&#39;:
+          # ensure =&gt; $snapshot ? { false =&gt; &#39;present&#39;, true =&gt; &#39;absent&#39; },
+          before =&gt; Package[&#39;mumble-server&#39;],
+        }
+      }
+      else {
+        # apt::ppa { [&#39;ppa:mumble/snapshot&#39;, &#39;ppa:mumble/release&#39;]:
+        #   ensure =&gt; &#39;absent&#39;
+        # }
+      }
+      # Missing dependency for 12.04 with PPA
+      if $libicu_fix {
+        package { &#39;libicu-dev&#39;:
+          before =&gt; Package[&#39;mumble-server&#39;],
+        }
+      }
+    }
+    default: {
+      fail(&quot;${::operatingsystem} is not yet supported.&quot;)
+    }
+  }
+
+  package { &#39;mumble-server&#39;:
+    ensure =&gt; $version,
+  }
+
+  group { $group:
+    require =&gt; Package[&#39;mumble-server&#39;],
+  }
+
+  user { $user:
+    gid     =&gt; $group,
+    require =&gt; [Group[$group], Package[&#39;mumble-server&#39;]],
+  }
+
+  file { &#39;/etc/mumble-server.ini&#39; :
+    owner   =&gt; $user,
+    group   =&gt; $group,
+    replace =&gt; true,
+    content =&gt; template(&#39;mumble/mumble-server.erb&#39;),
+    require =&gt; Package[&#39;mumble-server&#39;],
+  }
+
+  service { &#39;mumble-server&#39;:
+    ensure    =&gt; running,
+    enable    =&gt; $autostart,
+    subscribe =&gt; File[&#39;/etc/mumble-server.ini&#39;],
+  }
+
+  if $server_password != undef {
+    exec { &#39;mumble_set_password&#39;:
+      command =&gt; &quot;/usr/sbin/murmurd -supw ${server_password}&quot;,
+      require =&gt; Service[&#39;mumble-server&#39;],
+    }
+  }
+}</pre>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+      <div id="footer">
+  Generated on Sat Feb 11 20:34:50 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.4.0).
+</div>
+
+    </div>
+  </body>
+</html>
