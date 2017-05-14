@@ -6,7 +6,7 @@
   "source": "https://github.com/voxpupuli/puppet-mumble.git",
   "project_page": "https://github.com/voxpupuli/puppet-mumble",
   "issues_url": "https://github.com/voxpupuli/puppet-mumble/issues",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "tags": [
     "murmurd",
     "mumble",
