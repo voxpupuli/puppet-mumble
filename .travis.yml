@@ -34,10 +34,10 @@ branches:
 notifications:
   email: false
   irc:
-    on_success: change
+    on_success: always
     on_failure: always
     channels:
-      - "irc.freenode.org#voxpupuli-notifications"
+      - "chat.freenode.org#voxpupuli-notifications"
 deploy:
   provider: puppetforge
   user: puppet
