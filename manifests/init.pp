@@ -150,7 +150,7 @@ class mumble(
   if $server_password != undef {
     exec { 'mumble_set_password':
       command => "/usr/sbin/murmurd -supw ${server_password}",
-      require => Service['mumble-server'],
+      require => Service['mumble-server']
     }
   }
 }
