@@ -33,6 +33,11 @@ branches:
   - /^v\d/
 notifications:
   email: false
+  irc:
+    on_success: change
+    on_failure: always
+    channels:
+      - "irc.freenode.org#voxpupuli-notifications"
 deploy:
   provider: puppetforge
   user: puppet
