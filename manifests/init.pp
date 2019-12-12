@@ -65,7 +65,7 @@ class mumble(
   $welcome_text       = '<br />Welcome to this server running <b>Murmur</b>.<br />Enjoy your stay!<br />',
   ) {
 
-  case $::operatingsystem {
+  case $facts['os']['name'] {
     'Debian','Ubuntu': {
       if $ppa {
         apt::ppa { 'ppa:mumble/snapshot':
@@ -90,7 +90,7 @@ class mumble(
       }
     }
     default: {
-      fail("${::operatingsystem} is not yet supported.")
+      fail("${facts['os']['name']} is not yet supported.")
     }
   }
 
