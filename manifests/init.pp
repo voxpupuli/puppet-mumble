@@ -123,10 +123,10 @@ class mumble(
 
   if $server_password != undef {
     exec { 'mumble_set_password':
-      command => "/usr/sbin/murmurd -supw ${server_password} &> /dev/null && /usr/bin/touch /etc/mumble-server-puppet",
-      creates => '/etc/mumble-server-puppet',
-      require => Service['mumble-server'],
-      returns => [0,1],
+      command  => "/usr/sbin/murmurd -supw ${shell_escape($server_password)} 2>&1 | /bin/grep 'Superuser password set on server' && /usr/bin/touch /etc/mumble-server-puppet", # lint:ignore:140chars
+      creates  => '/etc/mumble-server-puppet',
+      require  => Service['mumble-server'],
+      provider => 'shell',
     }
   }
 }
