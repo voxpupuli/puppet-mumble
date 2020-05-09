@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.0.0](https://github.com/voxpupuli/puppet-mumble/tree/v3.0.0) (2020-05-09)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-mumble/compare/v2.1.2...v3.0.0)
+
+**Breaking changes:**
+
+- modulesync 2.7.0 and drop puppet 4 [\#49](https://github.com/voxpupuli/puppet-mumble/pull/49) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- mumble\_set\_password fail with exit code 1 [\#52](https://github.com/voxpupuli/puppet-mumble/issues/52)
+- fix mumble\_set\_password \(idempotency and returns\)\(Closes: \#52\) [\#53](https://github.com/voxpupuli/puppet-mumble/pull/53) ([sbadia](https://github.com/sbadia))
+
+**Closed issues:**
+
+- check debian support [\#36](https://github.com/voxpupuli/puppet-mumble/issues/36)
+- registerName option in mumble.ini is not a parameter [\#3](https://github.com/voxpupuli/puppet-mumble/issues/3)
+
+**Merged pull requests:**
+
+- Use voxpupuli-acceptance [\#62](https://github.com/voxpupuli/puppet-mumble/pull/62) ([ekohl](https://github.com/ekohl))
+- Fix for server\_password management [\#60](https://github.com/voxpupuli/puppet-mumble/pull/60) ([smortex](https://github.com/smortex))
+- Clean up acceptance spec helper [\#57](https://github.com/voxpupuli/puppet-mumble/pull/57) ([ekohl](https://github.com/ekohl))
+- fix puppet-string annotations & Generate REFERENCE.md [\#55](https://github.com/voxpupuli/puppet-mumble/pull/55) ([bastelfreak](https://github.com/bastelfreak))
+- metadata: bump ubuntu and debian support to latest version \(refs: \#36\) [\#54](https://github.com/voxpupuli/puppet-mumble/pull/54) ([sbadia](https://github.com/sbadia))
+- Allow puppetlabs/apt 7.x [\#50](https://github.com/voxpupuli/puppet-mumble/pull/50) ([dhoppe](https://github.com/dhoppe))
+
 ## [v2.1.2](https://github.com/voxpupuli/puppet-mumble/tree/v2.1.2) (2018-10-19)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-mumble/compare/v2.1.1...v2.1.2)

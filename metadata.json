@@ -1,6 +1,6 @@
 {
   "name": "puppet-mumble",
-  "version": "2.1.3-rc0",
+  "version": "3.0.0",
   "summary": "Install and Manage a Mumble Server",
   "author": "Vox Pupuli",
   "source": "https://github.com/voxpupuli/puppet-mumble.git",
