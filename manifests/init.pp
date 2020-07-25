@@ -34,7 +34,7 @@
 # @param ssl_key key file.
 # @param welcome_text a welcome formated text.
 #
-class mumble(
+class mumble (
   $autostart          = true,      # Start server at boot
   $ppa                = false,     # Use PPA
   $snapshot           = false,     # PPA only: use snapshot over release
@@ -63,8 +63,7 @@ class mumble(
   $ssl_cert           = '',
   $ssl_key            = '',
   $welcome_text       = '<br />Welcome to this server running <b>Murmur</b>.<br />Enjoy your stay!<br />',
-  ) {
-
+) {
   case $facts['os']['name'] {
     'Debian','Ubuntu': {
       if $ppa {
