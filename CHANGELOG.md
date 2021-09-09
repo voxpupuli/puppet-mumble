@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v4.0.0](https://github.com/voxpupuli/puppet-mumble/tree/v4.0.0) (2021-09-09)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-mumble/compare/v3.0.0...v4.0.0)
+
+**Breaking changes:**
+
+- Drop support for Debian 9, Ubuntu 16.04 \(EOL\) [\#72](https://github.com/voxpupuli/puppet-mumble/pull/72) ([smortex](https://github.com/smortex))
+- Drop support of Puppet 5 \(EOL\) [\#70](https://github.com/voxpupuli/puppet-mumble/pull/70) ([smortex](https://github.com/smortex))
+
+**Implemented enhancements:**
+
+- Add support for Puppet 7 [\#71](https://github.com/voxpupuli/puppet-mumble/pull/71) ([smortex](https://github.com/smortex))
+- Add support for Debian 11 and Ubuntu 20.04 [\#68](https://github.com/voxpupuli/puppet-mumble/pull/68) ([smortex](https://github.com/smortex))
+
+**Merged pull requests:**
+
+- Allow stdlib 8.x and apt 7.x [\#67](https://github.com/voxpupuli/puppet-mumble/pull/67) ([smortex](https://github.com/smortex))
+- modulesync 3.0.0 & puppet-lint updates [\#64](https://github.com/voxpupuli/puppet-mumble/pull/64) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v3.0.0](https://github.com/voxpupuli/puppet-mumble/tree/v3.0.0) (2020-05-09)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-mumble/compare/v2.1.2...v3.0.0)
@@ -98,7 +117,7 @@ These should not affect the functionality of the module.
 - modulesync 0.12.1 & Release 1.0.0 [\#6](https://github.com/voxpupuli/puppet-mumble/pull/6) ([bastelfreak](https://github.com/bastelfreak))
 - modulesync 0.11.1 [\#5](https://github.com/voxpupuli/puppet-mumble/pull/5) ([bastelfreak](https://github.com/bastelfreak))
 - Added support to install a specific version of mumble [\#4](https://github.com/voxpupuli/puppet-mumble/pull/4) ([x3dfxjunkie](https://github.com/x3dfxjunkie))
-- added register\_name variable [\#2](https://github.com/voxpupuli/puppet-mumble/pull/2) ([webberist](https://github.com/webberist))
+- added register\_name variable [\#2](https://github.com/voxpupuli/puppet-mumble/pull/2) ([sjpilot](https://github.com/sjpilot))
 
 ## [0.0.3](https://github.com/voxpupuli/puppet-mumble/tree/0.0.3) (2014-05-09)
 
