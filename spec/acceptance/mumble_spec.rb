@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper_acceptance'
 
 describe 'mumble class' do
@@ -5,6 +7,7 @@ describe 'mumble class' do
     it 'installs without error' do
       apply_manifest(pp, catch_failures: true)
     end
+
     it 'installs idempotently' do
       apply_manifest(pp, catch_changes: true)
     end
