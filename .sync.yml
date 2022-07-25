@@ -1,10 +1,6 @@
 ---
-.travis.yml:
-  docker_sets:
-    - set: debian9-64
-    - set: debian10-64
-    - set: ubuntu1604-64
-    - set: ubuntu1804-64
-  secure: "n5pFu+WCpXlqA7p0MAjSwm0XKNDlvOwDv8LGpe0rGZUK/+4JcpGFVUIx/nVevdNmlsUKnXpgy4XnQQoPVPLXleMW86U3QvgH0Qt//gmW3KyziCUfxeU1qt7cZWkgMaDXtv3xZqE8CVNOF8ugi5+6HsGNlrPulchYo33IKwk+eYc="
 spec/spec_helper_acceptance.rb:
   unmanaged: false
+.puppet-lint.rc:
+  enabled_lint_checks:
+    - parameter_documentation

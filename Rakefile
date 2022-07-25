@@ -1,7 +1,7 @@
 # Managed by modulesync - DO NOT EDIT
 # https://voxpupuli.org/docs/updating-files-managed-with-modulesync/
 
-# Attempt to load voxupuli-test (which pulls in puppetlabs_spec_helper),
+# Attempt to load voxpupuli-test (which pulls in puppetlabs_spec_helper),
 # otherwise attempt to load it directly.
 begin
   require 'voxpupuli/test/rake'
@@ -55,6 +55,11 @@ begin
     config.project = metadata.metadata['name']
   end
 
+  # update the REFERENCE.md if it exists
+  # reference task will run before changelog
+  # https://dev.to/molly/rake-task-enhance-method-explained-3bo0
+  Rake::Task['changelog'].enhance(['reference']) if File.exist?('REFERENCE.md')
+
   # Workaround for https://github.com/github-changelog-generator/github-changelog-generator/issues/715
   require 'rbconfig'
   if RbConfig::CONFIG['host_os'] =~ /linux/
@@ -66,7 +71,6 @@ begin
       File.open(changelog_file, "w") {|file| file.puts new_contents }
     end
   end
-
 rescue LoadError
 end
 # vim: syntax=ruby
