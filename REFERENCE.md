@@ -28,73 +28,73 @@ class { 'mumble':
 
 The following parameters are available in the `mumble` class:
 
-* [`autostart`](#autostart)
-* [`ppa`](#ppa)
-* [`snapshot`](#snapshot)
-* [`libicu_fix`](#libicu_fix)
-* [`server_password`](#server_password)
-* [`version`](#version)
-* [`register_name`](#register_name)
-* [`password`](#password)
-* [`port`](#port)
-* [`host`](#host)
-* [`user`](#user)
-* [`group`](#group)
-* [`bandwidth`](#bandwidth)
-* [`users`](#users)
-* [`text_length_limit`](#text_length_limit)
-* [`autoban_attempts`](#autoban_attempts)
-* [`autoban_time_frame`](#autoban_time_frame)
-* [`autoban_time`](#autoban_time)
-* [`database_path`](#database_path)
-* [`log_path`](#log_path)
-* [`allow_html`](#allow_html)
-* [`log_days`](#log_days)
-* [`ssl_cert`](#ssl_cert)
-* [`ssl_key`](#ssl_key)
-* [`welcome_text`](#welcome_text)
+* [`autostart`](#-mumble--autostart)
+* [`ppa`](#-mumble--ppa)
+* [`snapshot`](#-mumble--snapshot)
+* [`libicu_fix`](#-mumble--libicu_fix)
+* [`server_password`](#-mumble--server_password)
+* [`version`](#-mumble--version)
+* [`register_name`](#-mumble--register_name)
+* [`password`](#-mumble--password)
+* [`port`](#-mumble--port)
+* [`host`](#-mumble--host)
+* [`user`](#-mumble--user)
+* [`group`](#-mumble--group)
+* [`bandwidth`](#-mumble--bandwidth)
+* [`users`](#-mumble--users)
+* [`text_length_limit`](#-mumble--text_length_limit)
+* [`autoban_attempts`](#-mumble--autoban_attempts)
+* [`autoban_time_frame`](#-mumble--autoban_time_frame)
+* [`autoban_time`](#-mumble--autoban_time)
+* [`database_path`](#-mumble--database_path)
+* [`log_path`](#-mumble--log_path)
+* [`allow_html`](#-mumble--allow_html)
+* [`log_days`](#-mumble--log_days)
+* [`ssl_cert`](#-mumble--ssl_cert)
+* [`ssl_key`](#-mumble--ssl_key)
+* [`welcome_text`](#-mumble--welcome_text)
 
-##### <a name="autostart"></a>`autostart`
+##### <a name="-mumble--autostart"></a>`autostart`
 
 Data type: `Any`
 
 start server at boot.
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="ppa"></a>`ppa`
+##### <a name="-mumble--ppa"></a>`ppa`
 
 Data type: `Any`
 
 use Ubuntu PPA instead default APT repos.
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="snapshot"></a>`snapshot`
+##### <a name="-mumble--snapshot"></a>`snapshot`
 
 Data type: `PPA only`
 
 use snapshot over release.
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="libicu_fix"></a>`libicu_fix`
+##### <a name="-mumble--libicu_fix"></a>`libicu_fix`
 
 Data type: `Any`
 
 install libicu-dev to fix dependency.
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="server_password"></a>`server_password`
+##### <a name="-mumble--server_password"></a>`server_password`
 
 Data type: `Any`
 
 supervisor account password (mumble admin).
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="version"></a>`version`
+##### <a name="-mumble--version"></a>`version`
 
 Data type: `Any`
 
@@ -102,7 +102,7 @@ configure the version of mumble to install.
 
 Default value: `installed`
 
-##### <a name="register_name"></a>`register_name`
+##### <a name="-mumble--register_name"></a>`register_name`
 
 Data type: `Any`
 
@@ -110,7 +110,7 @@ muble server name. (This parameter affect mumble-server.ini through a template. 
 
 Default value: `'Mumble Server'`
 
-##### <a name="password"></a>`password`
+##### <a name="-mumble--password"></a>`password`
 
 Data type: `Any`
 
@@ -118,7 +118,7 @@ general entrance password.
 
 Default value: `''`
 
-##### <a name="port"></a>`port`
+##### <a name="-mumble--port"></a>`port`
 
 Data type: `Any`
 
@@ -126,7 +126,7 @@ port to bind TCP and UDP sockets to.
 
 Default value: `64738`
 
-##### <a name="host"></a>`host`
+##### <a name="-mumble--host"></a>`host`
 
 Data type: `Any`
 
@@ -134,7 +134,7 @@ IP or hostname to bind to. (If this is left blank (default), Murmur will bind to
 
 Default value: `''`
 
-##### <a name="user"></a>`user`
+##### <a name="-mumble--user"></a>`user`
 
 Data type: `Any`
 
@@ -142,7 +142,7 @@ username used to start mumble.
 
 Default value: `'mumble-server'`
 
-##### <a name="group"></a>`group`
+##### <a name="-mumble--group"></a>`group`
 
 Data type: `Any`
 
@@ -150,7 +150,7 @@ mumble server group
 
 Default value: `'mumble-server'`
 
-##### <a name="bandwidth"></a>`bandwidth`
+##### <a name="-mumble--bandwidth"></a>`bandwidth`
 
 Data type: `Any`
 
@@ -158,7 +158,7 @@ maximum bandwidth (in bits per second) clients are allowed).
 
 Default value: `72000`
 
-##### <a name="users"></a>`users`
+##### <a name="-mumble--users"></a>`users`
 
 Data type: `Any`
 
@@ -166,7 +166,7 @@ maximum number of concurrent clients allowed.
 
 Default value: `100`
 
-##### <a name="text_length_limit"></a>`text_length_limit`
+##### <a name="-mumble--text_length_limit"></a>`text_length_limit`
 
 Data type: `Any`
 
@@ -174,7 +174,7 @@ maximum length of text messages in characters. 0 for no limit.
 
 Default value: `5000`
 
-##### <a name="autoban_attempts"></a>`autoban_attempts`
+##### <a name="-mumble--autoban_attempts"></a>`autoban_attempts`
 
 Data type: `Any`
 
@@ -182,7 +182,7 @@ how many login attempts do we tolerate from one IP? (0 to disable).
 
 Default value: `10`
 
-##### <a name="autoban_time_frame"></a>`autoban_time_frame`
+##### <a name="-mumble--autoban_time_frame"></a>`autoban_time_frame`
 
 Data type: `Any`
 
@@ -190,7 +190,7 @@ time interval (0 to disable).
 
 Default value: `120`
 
-##### <a name="autoban_time"></a>`autoban_time`
+##### <a name="-mumble--autoban_time"></a>`autoban_time`
 
 Data type: `Any`
 
@@ -198,7 +198,7 @@ bantime duration in seconds (0 to disable).
 
 Default value: `300`
 
-##### <a name="database_path"></a>`database_path`
+##### <a name="-mumble--database_path"></a>`database_path`
 
 Data type: `Any`
 
@@ -207,7 +207,7 @@ Allowed values: absolute path
 
 Default value: `'/var/lib/mumble-server/mumble-server.sqlite'`
 
-##### <a name="log_path"></a>`log_path`
+##### <a name="-mumble--log_path"></a>`log_path`
 
 Data type: `Any`
 
@@ -216,15 +216,15 @@ Allowed values: absolute path
 
 Default value: `'/var/log/mumble-server/mumble-server.log'`
 
-##### <a name="allow_html"></a>`allow_html`
+##### <a name="-mumble--allow_html"></a>`allow_html`
 
 Data type: `Any`
 
 allow clients to use HTML in messages, user comments and channel descriptions?
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="log_days"></a>`log_days`
+##### <a name="-mumble--log_days"></a>`log_days`
 
 Data type: `Any`
 
@@ -232,7 +232,7 @@ log entries in an internal database (set to 0 to keep forever, or -1 to disable 
 
 Default value: `31`
 
-##### <a name="ssl_cert"></a>`ssl_cert`
+##### <a name="-mumble--ssl_cert"></a>`ssl_cert`
 
 Data type: `Any`
 
@@ -240,7 +240,7 @@ ssl certificate.
 
 Default value: `''`
 
-##### <a name="ssl_key"></a>`ssl_key`
+##### <a name="-mumble--ssl_key"></a>`ssl_key`
 
 Data type: `Any`
 
@@ -248,7 +248,7 @@ key file.
 
 Default value: `''`
 
-##### <a name="welcome_text"></a>`welcome_text`
+##### <a name="-mumble--welcome_text"></a>`welcome_text`
 
 Data type: `Any`
 
