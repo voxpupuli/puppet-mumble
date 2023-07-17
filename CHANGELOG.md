@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v5.0.0](https://github.com/voxpupuli/puppet-mumble/tree/v5.0.0) (2023-07-13)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-mumble/compare/v4.0.0...v5.0.0)
+
+**Breaking changes:**
+
+- Drop Puppet 6 support [\#79](https://github.com/voxpupuli/puppet-mumble/pull/79) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- Add Puppet 8 support [\#83](https://github.com/voxpupuli/puppet-mumble/pull/83) ([bastelfreak](https://github.com/bastelfreak))
+- puppetlabs/stdlib: Allow 9.x [\#82](https://github.com/voxpupuli/puppet-mumble/pull/82) ([bastelfreak](https://github.com/bastelfreak))
+- puppetlabs/apt: Allow 9.x [\#81](https://github.com/voxpupuli/puppet-mumble/pull/81) ([smortex](https://github.com/smortex))
+
 ## [v4.0.0](https://github.com/voxpupuli/puppet-mumble/tree/v4.0.0) (2021-09-09)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-mumble/compare/v3.0.0...v4.0.0)
