@@ -22,7 +22,7 @@ describe 'mumble', type: 'class' do
       context 'with a server_password' do
         let(:params) do
           {
-            server_password: 'It is Secret: $(rm -r /)'
+            server_password: 'It is Secret: $(rm -r /)',
           }
         end
 
