@@ -255,4 +255,3 @@ Data type: `Any`
 a welcome formated text.
 
 Default value: `'<br />Welcome to this server running <b>Murmur</b>.<br />Enjoy your stay!<br />'`
-
