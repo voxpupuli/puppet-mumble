@@ -4,7 +4,28 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v5.0.0](https://github.com/voxpupuli/puppet-mumble/tree/v5.0.0) (2023-07-13)
+## [v6.0.0](https://github.com/voxpupuli/puppet-mumble/tree/v6.0.0) (2026-11-04)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-mumble/compare/v5.0.0...v6.0.0)
+
+**Breaking changes:**
+
+- Drop EoL Ubuntu 18.04/ 20.04 support [\#122](https://github.com/voxpupuli/puppet-mumble/pull/122) ([bastelfreak](https://github.com/bastelfreak))
+- Drop EoL Debian 10/11 support [\#121](https://github.com/voxpupuli/puppet-mumble/pull/121) ([bastelfreak](https://github.com/bastelfreak))
+- Drop puppet, update openvox minimum version to 8.19 [\#102](https://github.com/voxpupuli/puppet-mumble/pull/102) ([TheMeier](https://github.com/TheMeier))
+
+**Implemented enhancements:**
+
+- Refactor Code for modern puppet [\#120](https://github.com/voxpupuli/puppet-mumble/pull/120) ([sebastianrakel](https://github.com/sebastianrakel))
+- Add Ubuntu 24.04/26.04 support [\#119](https://github.com/voxpupuli/puppet-mumble/pull/119) ([bastelfreak](https://github.com/bastelfreak))
+- Add Debian 13 support [\#118](https://github.com/voxpupuli/puppet-mumble/pull/118) ([bastelfreak](https://github.com/bastelfreak))
+- Update dependency puppetlabs/apt to v11 [\#115](https://github.com/voxpupuli/puppet-mumble/pull/115) ([pccibot](https://github.com/pccibot))
+- puppetlabs/stdlib: Allow 10.x [\#114](https://github.com/voxpupuli/puppet-mumble/pull/114) ([bastelfreak](https://github.com/bastelfreak))
+- Update requirements to allow OpenVox 9 [\#113](https://github.com/voxpupuli/puppet-mumble/pull/113) ([sebastianrakel](https://github.com/sebastianrakel))
+- Add support for Debian 12 [\#104](https://github.com/voxpupuli/puppet-mumble/pull/104) ([smortex](https://github.com/smortex))
+- Allow puppetlabs/apt 10.x [\#98](https://github.com/voxpupuli/puppet-mumble/pull/98) ([smortex](https://github.com/smortex))
+
+## [v5.0.0](https://github.com/voxpupuli/puppet-mumble/tree/v5.0.0) (2023-07-17)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-mumble/compare/v4.0.0...v5.0.0)
 
