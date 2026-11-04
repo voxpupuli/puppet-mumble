@@ -28,6 +28,7 @@ class { 'mumble':
 
 The following parameters are available in the `mumble` class:
 
+* [`package_name`](#-mumble--package_name)
 * [`autostart`](#-mumble--autostart)
 * [`ppa`](#-mumble--ppa)
 * [`snapshot`](#-mumble--snapshot)
@@ -54,9 +55,17 @@ The following parameters are available in the `mumble` class:
 * [`ssl_key`](#-mumble--ssl_key)
 * [`welcome_text`](#-mumble--welcome_text)
 
+##### <a name="-mumble--package_name"></a>`package_name`
+
+Data type: `String[1]`
+
+the name of the package to install
+
+Default value: `'mumble-server'`
+
 ##### <a name="-mumble--autostart"></a>`autostart`
 
-Data type: `Any`
+Data type: `Boolean`
 
 start server at boot.
 
@@ -64,7 +73,7 @@ Default value: `true`
 
 ##### <a name="-mumble--ppa"></a>`ppa`
 
-Data type: `Any`
+Data type: `Boolean`
 
 use Ubuntu PPA instead default APT repos.
 
@@ -72,15 +81,15 @@ Default value: `false`
 
 ##### <a name="-mumble--snapshot"></a>`snapshot`
 
-Data type: `PPA only`
+Data type: `Boolean`
 
-use snapshot over release.
+(PPA only) use snapshot over release.
 
 Default value: `false`
 
 ##### <a name="-mumble--libicu_fix"></a>`libicu_fix`
 
-Data type: `Any`
+Data type: `Boolean`
 
 install libicu-dev to fix dependency.
 
@@ -88,7 +97,7 @@ Default value: `false`
 
 ##### <a name="-mumble--server_password"></a>`server_password`
 
-Data type: `Any`
+Data type: `Optional[String]`
 
 supervisor account password (mumble admin).
 
@@ -96,7 +105,7 @@ Default value: `undef`
 
 ##### <a name="-mumble--version"></a>`version`
 
-Data type: `Any`
+Data type: `String[1]`
 
 configure the version of mumble to install.
 
@@ -104,23 +113,24 @@ Default value: `installed`
 
 ##### <a name="-mumble--register_name"></a>`register_name`
 
-Data type: `Any`
+Data type: `String[1]`
 
-muble server name. (This parameter affect mumble-server.ini through a template. For more info, see http://mumble.sourceforge.net/Murmur.ini)
+muble server name. (This parameter affect mumble-server.ini through a template.
+For more info, see http://mumble.sourceforge.net/Murmur.ini)
 
 Default value: `'Mumble Server'`
 
 ##### <a name="-mumble--password"></a>`password`
 
-Data type: `Any`
+Data type: `Optional[String]`
 
 general entrance password.
 
-Default value: `''`
+Default value: `undef`
 
 ##### <a name="-mumble--port"></a>`port`
 
-Data type: `Any`
+Data type: `Stdlib::Port`
 
 port to bind TCP and UDP sockets to.
 
@@ -128,15 +138,15 @@ Default value: `64738`
 
 ##### <a name="-mumble--host"></a>`host`
 
-Data type: `Any`
+Data type: `Optional[String]`
 
 IP or hostname to bind to. (If this is left blank (default), Murmur will bind to all available addresses).
 
-Default value: `''`
+Default value: `undef`
 
 ##### <a name="-mumble--user"></a>`user`
 
-Data type: `Any`
+Data type: `String[1]`
 
 username used to start mumble.
 
@@ -144,7 +154,7 @@ Default value: `'mumble-server'`
 
 ##### <a name="-mumble--group"></a>`group`
 
-Data type: `Any`
+Data type: `String[1]`
 
 mumble server group
 
@@ -152,7 +162,7 @@ Default value: `'mumble-server'`
 
 ##### <a name="-mumble--bandwidth"></a>`bandwidth`
 
-Data type: `Any`
+Data type: `Integer`
 
 maximum bandwidth (in bits per second) clients are allowed).
 
@@ -160,7 +170,7 @@ Default value: `72000`
 
 ##### <a name="-mumble--users"></a>`users`
 
-Data type: `Any`
+Data type: `Integer`
 
 maximum number of concurrent clients allowed.
 
@@ -168,7 +178,7 @@ Default value: `100`
 
 ##### <a name="-mumble--text_length_limit"></a>`text_length_limit`
 
-Data type: `Any`
+Data type: `Integer`
 
 maximum length of text messages in characters. 0 for no limit.
 
@@ -176,7 +186,7 @@ Default value: `5000`
 
 ##### <a name="-mumble--autoban_attempts"></a>`autoban_attempts`
 
-Data type: `Any`
+Data type: `Integer`
 
 how many login attempts do we tolerate from one IP? (0 to disable).
 
@@ -184,7 +194,7 @@ Default value: `10`
 
 ##### <a name="-mumble--autoban_time_frame"></a>`autoban_time_frame`
 
-Data type: `Any`
+Data type: `Integer`
 
 time interval (0 to disable).
 
@@ -192,7 +202,7 @@ Default value: `120`
 
 ##### <a name="-mumble--autoban_time"></a>`autoban_time`
 
-Data type: `Any`
+Data type: `Integer`
 
 bantime duration in seconds (0 to disable).
 
@@ -200,25 +210,23 @@ Default value: `300`
 
 ##### <a name="-mumble--database_path"></a>`database_path`
 
-Data type: `Any`
+Data type: `Stdlib::AbsolutePath`
 
-path to database.
-Allowed values: absolute path
+path to database
 
 Default value: `'/var/lib/mumble-server/mumble-server.sqlite'`
 
 ##### <a name="-mumble--log_path"></a>`log_path`
 
-Data type: `Any`
+Data type: `Stdlib::AbsolutePath`
 
 path to logfile
-Allowed values: absolute path
 
 Default value: `'/var/log/mumble-server/mumble-server.log'`
 
 ##### <a name="-mumble--allow_html"></a>`allow_html`
 
-Data type: `Any`
+Data type: `Boolean`
 
 allow clients to use HTML in messages, user comments and channel descriptions?
 
@@ -226,7 +234,7 @@ Default value: `true`
 
 ##### <a name="-mumble--log_days"></a>`log_days`
 
-Data type: `Any`
+Data type: `Integer`
 
 log entries in an internal database (set to 0 to keep forever, or -1 to disable logging to the DB).
 
@@ -234,23 +242,23 @@ Default value: `31`
 
 ##### <a name="-mumble--ssl_cert"></a>`ssl_cert`
 
-Data type: `Any`
+Data type: `Optional[Stdlib::AbsolutePath]`
 
 ssl certificate.
 
-Default value: `''`
+Default value: `undef`
 
 ##### <a name="-mumble--ssl_key"></a>`ssl_key`
 
-Data type: `Any`
+Data type: `Optional[Stdlib::AbsolutePath]`
 
 key file.
 
-Default value: `''`
+Default value: `undef`
 
 ##### <a name="-mumble--welcome_text"></a>`welcome_text`
 
-Data type: `Any`
+Data type: `String`
 
 a welcome formated text.
 
