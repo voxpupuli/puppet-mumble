@@ -18,7 +18,7 @@ describe 'mumble class' do
     end
 
     describe command('netstat -napt') do
-      its(:stdout) { is_expected.to match %r{^tcp.*64738.*LISTEN.*murmurd} }
+      its(:stdout) { is_expected.to match %r{^tcp.*64738.*LISTEN.*(murmurd|mumble-server)} }
     end
   end
 

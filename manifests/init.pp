@@ -45,6 +45,9 @@
 # @param group
 #   mumble server group
 #
+# @param binary_path
+#   path to server binary
+#
 # @param bandwidth
 #   maximum bandwidth (in bits per second) clients are allowed).
 #
@@ -95,6 +98,7 @@ class mumble (
   Stdlib::Port $port = 64738,
   String[1] $user = 'mumble-server',
   String[1] $group = 'mumble-server',
+  Stdlib::AbsolutePath $binary_path = '/usr/sbin/murmurd',
   Integer $bandwidth = 72000,
   Integer $users = 100,
   Integer $text_length_limit = 5000,
@@ -163,7 +167,7 @@ class mumble (
 
   if $server_password != undef {
     exec { 'mumble_set_password':
-      command  => "/usr/sbin/murmurd -supw ${shell_escape($server_password)} 2>&1 | /bin/grep 'Superuser password set on server' && /usr/bin/touch /etc/mumble-server-puppet", # lint:ignore:140chars
+      command  => "${binary_path} -supw ${shell_escape($server_password)} 2>&1 | /bin/grep 'Superuser password set on server' && /usr/bin/touch /etc/mumble-server-puppet", # lint:ignore:140chars
       creates  => '/etc/mumble-server-puppet',
       require  => Service['mumble-server'],
       provider => 'shell',
