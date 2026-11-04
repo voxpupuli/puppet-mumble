@@ -41,6 +41,7 @@ The following parameters are available in the `mumble` class:
 * [`host`](#-mumble--host)
 * [`user`](#-mumble--user)
 * [`group`](#-mumble--group)
+* [`binary_path`](#-mumble--binary_path)
 * [`bandwidth`](#-mumble--bandwidth)
 * [`users`](#-mumble--users)
 * [`text_length_limit`](#-mumble--text_length_limit)
@@ -159,6 +160,14 @@ Data type: `String[1]`
 mumble server group
 
 Default value: `'mumble-server'`
+
+##### <a name="-mumble--binary_path"></a>`binary_path`
+
+Data type: `Stdlib::AbsolutePath`
+
+path to server binary
+
+Default value: `'/usr/sbin/murmurd'`
 
 ##### <a name="-mumble--bandwidth"></a>`bandwidth`
 
