@@ -1,0 +1,2 @@
+---
+mumble::binary_path: '/usr/bin/mumble-server'
