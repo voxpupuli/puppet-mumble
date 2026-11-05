@@ -87,6 +87,9 @@
 # @param welcome_text
 #   a welcome formated text.
 #
+# @param config_path
+#   path to the config file
+#
 class mumble (
   String[1] $package_name = 'mumble-server',
   Boolean $autostart = true,
@@ -115,6 +118,7 @@ class mumble (
   Optional[Stdlib::AbsolutePath] $ssl_cert = undef,
   Optional[Stdlib::AbsolutePath] $ssl_key = undef,
   String $welcome_text = '<br />Welcome to this server running <b>Murmur</b>.<br />Enjoy your stay!<br />',
+  Stdlib::AbsolutePath $config_path = '/etc/mumble-server.ini',
 ) {
   case $facts['os']['name'] {
     'Debian','Ubuntu': {
@@ -151,18 +155,36 @@ class mumble (
     require => [Group[$group], Package[$package_name]],
   }
 
-  file { '/etc/mumble-server.ini' :
+  file { $config_path:
     owner   => $user,
     group   => $group,
     replace => true,
-    content => template('mumble/mumble-server.erb'),
-    require => Package['mumble-server'],
+    content => epp('mumble/mumble-server.epp', {
+      'log_path'           => $log_path,
+      'welcome_text'       => $welcome_text,
+      'port'               => $port,
+      'host'               => $host,
+      'password'           => $password,
+      'bandwidth'          => $bandwidth,
+      'users'              => $users,
+      'text_length_limit'  => $text_length_limit,
+      'allow_html'         => $allow_html,
+      'log_days'           => $log_days,
+      'register_name'      => $register_name,
+      'ssl_cert'           => $ssl_cert,
+      'ssl_key'            => $ssl_key,
+      'user'               => $user,
+      'autoban_attempts'   => $autoban_attempts,
+      'autoban_time_frame' => $autoban_time_frame,
+      'autoban_time'       => $autoban_time,
+    }),
+    require => Package[$package_name],
   }
 
   service { 'mumble-server':
     ensure    => running,
     enable    => $autostart,
-    subscribe => File['/etc/mumble-server.ini'],
+    subscribe => File[$config_path],
   }
 
   if $server_password != undef {

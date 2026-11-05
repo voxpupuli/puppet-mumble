@@ -1,2 +1,3 @@
 ---
 mumble::binary_path: '/usr/bin/mumble-server'
+mumble::config_path: '/etc/mumble/mumble-server.ini'
