@@ -9,10 +9,19 @@ describe 'mumble', type: 'class' do
         facts
       end
 
+      let(:expected_config_path) do
+        if (facts[:os]['name'] == 'Debian' && facts[:os]['release']['major'].to_i >= 13) ||
+           (facts[:os]['name'] == 'Ubuntu' && facts[:os]['release']['major'].to_i >= 24)
+          '/etc/mumble/mumble-server.ini'
+        else
+          '/etc/mumble-server.ini'
+        end
+      end
+
       context 'with all defaults' do
         it { is_expected.to compile.with_all_deps }
         it { is_expected.to contain_class('mumble') }
-        it { is_expected.to contain_file('/etc/mumble-server.ini') }
+        it { is_expected.to contain_file(expected_config_path) }
         it { is_expected.to contain_group('mumble-server') }
         it { is_expected.to contain_package('mumble-server') }
         it { is_expected.to contain_service('mumble-server') }

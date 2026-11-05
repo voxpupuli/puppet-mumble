@@ -55,6 +55,7 @@ The following parameters are available in the `mumble` class:
 * [`ssl_cert`](#-mumble--ssl_cert)
 * [`ssl_key`](#-mumble--ssl_key)
 * [`welcome_text`](#-mumble--welcome_text)
+* [`config_path`](#-mumble--config_path)
 
 ##### <a name="-mumble--package_name"></a>`package_name`
 
@@ -272,3 +273,11 @@ Data type: `String`
 a welcome formated text.
 
 Default value: `'<br />Welcome to this server running <b>Murmur</b>.<br />Enjoy your stay!<br />'`
+
+##### <a name="-mumble--config_path"></a>`config_path`
+
+Data type: `Stdlib::AbsolutePath`
+
+path to the config file
+
+Default value: `'/etc/mumble-server.ini'`
