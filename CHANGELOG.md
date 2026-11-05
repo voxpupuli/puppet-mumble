@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v6.0.1](https://github.com/voxpupuli/puppet-mumble/tree/v6.0.1) (2026-11-05)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-mumble/compare/v6.0.0...v6.0.1)
+
+**Fixed bugs:**
+
+- Write the right config file [\#123](https://github.com/voxpupuli/puppet-mumble/pull/123) ([sebastianrakel](https://github.com/sebastianrakel))
+
 ## [v6.0.0](https://github.com/voxpupuli/puppet-mumble/tree/v6.0.0) (2026-11-04)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-mumble/compare/v5.0.0...v6.0.0)
