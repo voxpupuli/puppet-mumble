@@ -103,7 +103,7 @@ icesecretwrite=
 ; logs to the file 'mumble-server.log'. If you leave this field blank
 ; on Unix-like systems, the server will force itself into foreground
 ; mode which logs to the console.
-logfile=<%= log_path %>
+logfile=<%= $log_path %>
 
 ; If set, the server will write its process ID to this file
 ; when running in daemon mode (when the -fg flag is not
